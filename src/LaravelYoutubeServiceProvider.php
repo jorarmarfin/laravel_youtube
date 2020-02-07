@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use JorarMarfin\MiPaquete\Controllers\MainController;
+use JorarMarfin\LaravelYoutube\Controllers\MainController;
 
-class MiPaqueteServiceProvider extends ServiceProvider
+class LaravelYoutubeServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -14,14 +14,14 @@ class MiPaqueteServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        App::bind('MiPaquete', function()
+        App::bind('LaravelYoutube', function()
         {
             return new MainController;
         });
         App::booting( function()
         {
             $loader = AliasLoader::getInstance();
-            $loader->alias('MiPaquete', 'JorarMarfin\MiPaquete\Facades\MiPaqueteFacade');
+            $loader->alias('LaravelYoutube', 'JorarMarfin\LaravelYoutube\Facades\LaravelYoutubeFacade');
         });
     }
 

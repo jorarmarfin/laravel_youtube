@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function getData()
+    public function getData($link)
     {
-        return "Hola mundo";
+        $enlace = 'https://www.youtube.com/';
+        $enlace .= 'oembed?';
+        $enlace .= 'url=';
+        $enlace .= $link;
+        $enlace .= '&format=json';
+        $params = file_get_contents($enlace);
+        $params = json_decode($params);
+        return $params;
     }
 }
