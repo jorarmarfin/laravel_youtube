@@ -28,7 +28,7 @@ If you don't use auto-discovery you will need to include the service provider / 
 
 'aliases' => [
     //...
-    'PDF' => JorarMarfin\LaravelYoutube\Facades\LaravelYoutubeFacade::class
+    'LaravelYoutube' => JorarMarfin\LaravelYoutube\Facades\LaravelYoutubeFacade::class
 ]
 ```
 
